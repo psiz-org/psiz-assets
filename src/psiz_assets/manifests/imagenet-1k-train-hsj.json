@@ -1,0 +1,124 @@
+{
+  "id": "imagenet-1k-train-hsj",
+  "version": "1.0.0",
+  "default_dataset_variant": "8-rank-3",
+  "default_model_id": "hvi-un-d4",
+  "aliases": [],
+  "datasets": [
+    {
+      "id": "imagenet-1k-train-hsj",
+      "version": "1.0.0",
+      "variant": "8-rank-3",
+      "uri": "hf://psiz/imagenet-1k-train-hsj/8-rank-3",
+      "provenance": {"format": "parquet", "variant": "8-rank-3", "default": true}
+    },
+    {
+      "id": "imagenet-1k-train-hsj",
+      "version": "1.0.0",
+      "variant": "2-rank-1",
+      "uri": "hf://psiz/imagenet-1k-train-hsj/2-rank-1",
+      "provenance": {"format": "parquet", "variant": "2-rank-1"}
+    }
+  ],
+  "models": [
+    {
+      "id": "hvi-un-d4",
+      "version": "1.0.0",
+      "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d4",
+      "provenance": {
+        "framework": "torch",
+        "format": "safetensors",
+        "publisher": "psiz"
+      }
+    },
+    {
+      "id": "resnet50",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchResNetAdapter",
+      "provenance": {"adapter": "PyTorchResNetAdapter", "framework": "torch"}
+    },
+    {
+      "id": "byol_resnet50",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchBYOLResNetAdapter",
+      "provenance": {"adapter": "PyTorchBYOLResNetAdapter", "framework": "torch"}
+    },
+    {
+      "id": "vit_b16",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchViTSupervisedAdapter",
+      "provenance": {"adapter": "PyTorchViTSupervisedAdapter", "framework": "torch"}
+    },
+    {
+      "id": "dino_vits8",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchDINOAdapter",
+      "provenance": {"adapter": "PyTorchDINOAdapter", "framework": "torch"}
+    },
+    {
+      "id": "dinov2_vitb14",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchDINOv2Adapter",
+      "provenance": {"adapter": "PyTorchDINOv2Adapter", "framework": "torch"}
+    },
+    {
+      "id": "mae_vitb16",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchMAEAdapter",
+      "provenance": {"adapter": "PyTorchMAEAdapter", "framework": "torch"}
+    },
+    {
+      "id": "clip_vitb32",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchCLIPAdapter",
+      "provenance": {"adapter": "PyTorchCLIPAdapter", "framework": "torch"}
+    },
+    {
+      "id": "clip_vitl14",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchCLIPLargeAdapter",
+      "provenance": {"adapter": "PyTorchCLIPLargeAdapter", "framework": "torch"}
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "default",
+      "version": "1.0.0",
+      "dataset_id": "imagenet-1k-train-hsj",
+      "dataset_version": "1.0.0",
+      "dataset_variant": "8-rank-3",
+      "implementation": "imagenet_1k_train_hsj_v1",
+      "requirements": {
+        "evaluate": [
+          {
+            "name": "stimulus_images",
+            "description": "ImageNet-1K images in ILSVRC2012 layout"
+          },
+          {
+            "name": "annotation_dataset",
+            "description": "imagenet-1k-train-hsj@1.0.0"
+          }
+        ],
+        "compare_representations": [
+          {
+            "name": "stimulus_images",
+            "description": "ImageNet-1K images in ILSVRC2012 layout"
+          },
+          {
+            "name": "reference_model",
+            "description": "Canonical psychological embedding model of imagenet-1k-train-hsj@1.0.0"
+          }
+        ]
+      },
+      "protocol": {
+        "model_interface": "image_embedding",
+        "metrics": ["accuracy", "cce"],
+        "split": "test",
+        "n_reference": 8,
+        "n_select": 3,
+        "outcome_encoding": "sparse_permutation_index"
+      }
+    }
+  ],
+  "provenance": {"publisher": "psiz-assets"}
+}
