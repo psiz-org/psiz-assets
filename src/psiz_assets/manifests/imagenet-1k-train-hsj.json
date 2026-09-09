@@ -108,6 +108,12 @@
       "version": "1.0.0",
       "uri": "python://psiz_phase_2.adapters:PyTorchCLIPLargeAdapter",
       "provenance": {"adapter": "PyTorchCLIPLargeAdapter", "framework": "torch"}
+    },
+    {
+      "id": "cornet_s",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchCORnetSAdapter",
+      "provenance": {"adapter": "PyTorchCORnetSAdapter", "framework": "torch"}
     }
   ],
   "benchmarks": [
