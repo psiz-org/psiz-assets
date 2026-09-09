@@ -2,7 +2,7 @@
   "id": "imagenet-1k-train-hsj",
   "version": "1.0.0",
   "default_dataset_variant": "8-rank-3",
-  "default_model_id": "hvi-un-d4",
+  "default_model_id": "hvi-un-d16",
   "aliases": [],
   "datasets": [
     {
@@ -22,11 +22,41 @@
   ],
   "models": [
     {
+      "id": "hvi-un-d2",
+      "version": "1.0.0",
+      "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d2",
+      "provenance": {
+        "framework": "tensorflow",
+        "format": "safetensors",
+        "publisher": "psiz"
+      }
+    },
+    {
       "id": "hvi-un-d4",
       "version": "1.0.0",
       "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d4",
       "provenance": {
-        "framework": "torch",
+        "framework": "tensorflow",
+        "format": "safetensors",
+        "publisher": "psiz"
+      }
+    },
+    {
+      "id": "hvi-un-d8",
+      "version": "1.0.0",
+      "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d8",
+      "provenance": {
+        "framework": "tensorflow",
+        "format": "safetensors",
+        "publisher": "psiz"
+      }
+    },
+    {
+      "id": "hvi-un-d16",
+      "version": "1.0.0",
+      "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d16",
+      "provenance": {
+        "framework": "tensorflow",
         "format": "safetensors",
         "publisher": "psiz"
       }
