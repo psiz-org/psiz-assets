@@ -80,6 +80,12 @@
       "provenance": {"adapter": "PyTorchViTSupervisedAdapter", "framework": "torch"}
     },
     {
+      "id": "vit_g14_jft",
+      "version": "1.0.0",
+      "uri": "python://psiz_phase_2.adapters:PyTorchViTG14JFTAdapter",
+      "provenance": {"adapter": "PyTorchViTG14JFTAdapter", "framework": "torch"}
+    },
+    {
       "id": "dino_vits8",
       "version": "1.0.0",
       "uri": "python://psiz_phase_2.adapters:PyTorchDINOAdapter",
