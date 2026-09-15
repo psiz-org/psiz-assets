@@ -2,7 +2,7 @@
   "id": "imagenet-1k-train-hsj",
   "version": "1.0.0",
   "default_dataset_variant": "8-rank-3",
-  "default_model_id": "hvi-un-d16",
+  "default_model_id": "hvi-un-d32",
   "aliases": [],
   "datasets": [
     {
@@ -55,6 +55,16 @@
       "id": "hvi-un-d16",
       "version": "1.0.0",
       "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d16",
+      "provenance": {
+        "framework": "tensorflow",
+        "format": "safetensors",
+        "publisher": "psiz"
+      }
+    },
+    {
+      "id": "hvi-un-d32",
+      "version": "1.0.0",
+      "uri": "hf://psiz/imagenet-1k-train-hsj-hvi-un-d32",
       "provenance": {
         "framework": "tensorflow",
         "format": "safetensors",
